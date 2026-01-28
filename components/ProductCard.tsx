@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Heart, ShoppingBag, Eye } from 'lucide-react';
+import { Heart, ShoppingBag, Eye, ImageOff } from 'lucide-react';
 import { Product } from '../types';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
@@ -25,16 +25,23 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
       {/* Image */}
       <div className="relative aspect-[3/4] overflow-hidden bg-gray-900">
-        <img 
-          src={product.image} 
-          alt={product.title} 
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-        />
+        {product.image ? (
+            <img 
+            src={product.image} 
+            alt={product.title} 
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+        ) : (
+            <div className="w-full h-full flex flex-col items-center justify-center text-gray-600">
+                <ImageOff size={32} className="mb-2 opacity-50" />
+                <span className="text-xs">No Image</span>
+            </div>
+        )}
         
         {/* Hover Actions */}
         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
            <button 
-             onClick={(e) => { e.preventDefault(); addToCart(product, product.size[0], product.colors[0]); }}
+             onClick={(e) => { e.preventDefault(); addToCart(product, product.size[0], product.colors[0], "Regular Fit"); }}
              className="p-3 bg-white text-black rounded-full hover:bg-amber-500 hover:text-white transition-colors transform hover:scale-110"
              title="Quick Add"
            >

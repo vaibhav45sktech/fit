@@ -6,6 +6,7 @@ import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import { WishlistProvider } from './context/WishlistContext';
+import { ReviewProvider } from './context/ReviewContext';
 
 // Components
 import Navbar from './components/Navbar';
@@ -33,37 +34,39 @@ const App: React.FC = () => {
       <AuthProvider>
         <CartProvider>
           <WishlistProvider>
-            <div className="flex flex-col min-h-screen bg-background text-white font-sans selection:bg-amber-500 selection:text-black">
-              <Navbar />
-              <main className="flex-grow">
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/shop" element={<Shop />} />
-                  <Route path="/product/:id" element={<ProductDetail />} />
-                  <Route path="/cart" element={<Cart />} />
-                  <Route path="/wishlist" element={<Wishlist />} />
-                  <Route path="/account" element={<Account />} />
-                  <Route path="/design-lab" element={<DesignLab />} />
-                </Routes>
-              </main>
-              <Footer />
-              <Toaster 
-                position="bottom-center"
-                toastOptions={{
-                  style: {
-                    background: '#1a1a1a',
-                    color: '#fff',
-                    border: '1px solid rgba(255,255,255,0.1)'
-                  },
-                  success: {
-                    iconTheme: {
-                        primary: '#f59e0b',
-                        secondary: '#000'
+            <ReviewProvider>
+              <div className="flex flex-col min-h-screen bg-background text-white font-sans selection:bg-amber-500 selection:text-black">
+                <Navbar />
+                <main className="flex-grow">
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/shop" element={<Shop />} />
+                    <Route path="/product/:id" element={<ProductDetail />} />
+                    <Route path="/cart" element={<Cart />} />
+                    <Route path="/wishlist" element={<Wishlist />} />
+                    <Route path="/account" element={<Account />} />
+                    <Route path="/design-lab" element={<DesignLab />} />
+                  </Routes>
+                </main>
+                <Footer />
+                <Toaster 
+                  position="bottom-center"
+                  toastOptions={{
+                    style: {
+                      background: '#1a1a1a',
+                      color: '#fff',
+                      border: '1px solid rgba(255,255,255,0.1)'
+                    },
+                    success: {
+                      iconTheme: {
+                          primary: '#f59e0b',
+                          secondary: '#000'
+                      }
                     }
-                  }
-                }}
-              />
-            </div>
+                  }}
+                />
+              </div>
+            </ReviewProvider>
           </WishlistProvider>
         </CartProvider>
       </AuthProvider>

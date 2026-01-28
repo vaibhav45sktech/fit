@@ -3,8 +3,8 @@ import { CartItem, Product } from '../types';
 
 interface CartContextType {
   cart: CartItem[];
-  addToCart: (product: Product, size: string, color: string) => void;
-  removeFromCart: (itemId: number) => void;
+  addToCart: (product: Product, size: string, color: string, fit: string) => void;
+  removeFromCart: (index: number) => void;
   clearCart: () => void;
   cartTotal: number;
   cartCount: number;
@@ -26,22 +26,31 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     localStorage.setItem('fittara_cart', JSON.stringify(cart));
   }, [cart]);
 
-  const addToCart = (product: Product, size: string, color: string) => {
+  const addToCart = (product: Product, size: string, color: string, fit: string) => {
     setCart(prev => {
-      const existing = prev.find(item => item.id === product.id && item.selectedSize === size && item.selectedColor === color);
+      const existing = prev.find(item => 
+        item.id === product.id && 
+        item.selectedSize === size && 
+        item.selectedColor === color &&
+        item.selectedFit === fit
+      );
+      
       if (existing) {
         return prev.map(item => 
-          item.id === product.id && item.selectedSize === size && item.selectedColor === color
+          item.id === product.id && 
+          item.selectedSize === size && 
+          item.selectedColor === color && 
+          item.selectedFit === fit
             ? { ...item, quantity: item.quantity + 1 } 
             : item
         );
       }
-      return [...prev, { ...product, quantity: 1, selectedSize: size, selectedColor: color }];
+      return [...prev, { ...product, quantity: 1, selectedSize: size, selectedColor: color, selectedFit: fit }];
     });
   };
 
-  const removeFromCart = (itemId: number) => {
-    setCart(prev => prev.filter(item => item.id !== itemId));
+  const removeFromCart = (index: number) => {
+    setCart(prev => prev.filter((_, i) => i !== index));
   };
 
   const clearCart = () => setCart([]);

@@ -21,6 +21,7 @@ export interface CartItem extends Product {
   quantity: number;
   selectedSize: string;
   selectedColor: string;
+  selectedFit: string;
 }
 
 export interface User {

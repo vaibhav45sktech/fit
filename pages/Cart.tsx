@@ -68,9 +68,12 @@ const Cart: React.FC = () => {
                  <div>
                     <div className="flex justify-between items-start">
                         <h3 className="font-medium text-white">{item.title}</h3>
-                        <button onClick={() => removeFromCart(item.id)} className="text-gray-500 hover:text-red-500"><Trash2 size={18} /></button>
+                        <button onClick={() => removeFromCart(idx)} className="text-gray-500 hover:text-red-500"><Trash2 size={18} /></button>
                     </div>
-                    <p className="text-sm text-gray-400 mt-1">Size: {item.selectedSize} | Color: {item.selectedColor}</p>
+                    <p className="text-sm text-gray-400 mt-1">
+                      Size: {item.selectedSize} | Color: {item.selectedColor} 
+                      {item.selectedFit && <span className="block mt-1 text-amber-500 text-xs">Fit: {item.selectedFit}</span>}
+                    </p>
                     <p className="text-amber-500 font-bold mt-2">₹{item.price.toLocaleString()}</p>
                  </div>
                  <div className="flex items-center gap-4">

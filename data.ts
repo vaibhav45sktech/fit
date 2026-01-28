@@ -36,19 +36,25 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 3,
-    title: "Midnight Silk Ceremonial Shirt",
-    price: 12999,
-    image: "https://picsum.photos/seed/shirt1/800/1000",
-    slug: "midnight-silk-shirt",
-    tag: "New Arrival",
-    size: ["S", "M", "L", "XL", "XXL"],
-    fabric: "100% Raw Silk",
-    colors: ["Midnight Blue", "Maroon"],
+    title: "Black Timeless Shirt",
+    price: 800,
+    originalPrice: 1200,
+    image: "",
+    slug: "black-timeless-shirt",
+    tag: "Premium",
+    size: ["S", "M", "L", "XL", "XXL", "3XL"],
+    fabric: "Premium Wrinkle-Free Lachka Fabric",
+    colors: ["Black"],
     category: "shirt",
     rating: 4.9,
-    reviews: 42,
-    description: "Crafted from the finest raw silk, this ceremonial shirt exudes luxury. Perfect for weddings and gala events.",
-    features: ["Mandarin Collar", "Hidden Placket", "Mother of Pearl Buttons"]
+    reviews: 54,
+    description: "Crafted from our Premium Wrinkle-Free Lachka Fabric, this shirt is designed for a crisp, polished look that lasts all day. The wrinkle-free fabric ensures minimal ironing, while the breathable construction keeps you comfortable in every season.",
+    features: [
+      "Premium wrinkle-free Lachka Fabric",
+      "Smooth finish with a clean drape",
+      "Easy-care, low maintenance fabric",
+      "Suitable for all-day wear"
+    ]
   },
   {
     id: 4,
@@ -65,22 +71,6 @@ export const PRODUCTS: Product[] = [
     reviews: 56,
     description: "Bringing back the equestrian heritage with modern comfort. These breeches are designed for those who appreciate history.",
     features: ["Reinforced Inner Leg", "Buttoned Calves", "High Rise"]
-  },
-  {
-    id: 5,
-    title: "Velvet Tuxedo Shirt",
-    price: 14999,
-    image: "https://picsum.photos/seed/velvet/800/1000",
-    slug: "velvet-tuxedo-shirt",
-    tag: "Limited Edition",
-    size: ["M", "L", "XL"],
-    fabric: "Premium Velvet",
-    colors: ["Emerald", "Burgundy"],
-    category: "shirt",
-    rating: 5.0,
-    reviews: 12,
-    description: "Make a statement with our Velvet Tuxedo Shirt. Soft to the touch and visually striking.",
-    features: ["French Cuffs", "Wing Tip Collar", "Slim Fit"]
   },
   {
     id: 6,
@@ -103,6 +93,6 @@ export const PRODUCTS: Product[] = [
 export const CATEGORIES = [
   { id: 'modern', name: 'Modern Pants', image: 'https://picsum.photos/seed/cat1/600/400' },
   { id: 'classic', name: 'Classic Trousers', image: 'https://picsum.photos/seed/cat2/600/400' },
-  { id: 'shirt', name: 'Premium Shirts', image: 'https://picsum.photos/seed/cat3/600/400' },
+  { id: 'shirt', name: 'Premium Shirts', image: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=2070&auto=format&fit=crop' },
   { id: 'wedding', name: 'Wedding Closet', image: 'https://picsum.photos/seed/cat4/600/400' }
 ];

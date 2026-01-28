@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
     <div className="fixed w-full z-50">
       {/* Announcement Bar */}
       <div className="bg-amber-600 text-black text-xs font-bold py-1 text-center tracking-widest uppercase">
-        Free Shipping on Orders Above ₹4,999 | Use Code: FESTIVE20
+        FESTIVE SALE LIVE | Use Code: FESTIVE20
       </div>
 
       {/* Main Nav */}
