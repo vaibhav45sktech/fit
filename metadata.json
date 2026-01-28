@@ -1,0 +1,8 @@
+{
+  "name": "FITTARA - Premium Ethnic Wear",
+  "description": "A luxurious e-commerce destination for premium ethnic wear, featuring AI-powered styling, custom design generation, and a seamless shopping experience.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
